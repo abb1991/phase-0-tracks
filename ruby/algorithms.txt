@@ -1,0 +1,24 @@
+
+-Tell robot that it's on an elevator
+  -Robot asks "What floor would you like to visit?"
+  -User tells robot floor choice
+    -Robot says "Floor #{user choice}"
+-Robot orients self in room, finds buttons, reads buttons, finds #{user choice} button, pushes button, figures out if #{user choice} is greater or lesser than current floor
+  -Robot says "going up/down"
+-Otherwise, Robot says "I couldn't find your floor"
+
+Preparing to exercise
+-Make decision to exercise
+  -Find t-shirt, shorts, phone arm-band, headphones
+
+    if running
+     -put on running shoes, choose music
+    elsif
+      -put on socks, basketball shoes, get basketball, choose podcast
+    else
+      -no shoes, put on tv show
+    end
+
+
+
+
