@@ -1,3 +1,8 @@
+puts "How many employees will be processed?"
+num = gets.chomp.to_i
+
+while num > 0
+
 puts "What is your name?"
 name = gets.chomp.downcase
 
@@ -48,6 +53,9 @@ when age && (garlic_bread || insurance)
   puts "Probably not a vampire."
 else
   puts "Results inconclusive."
+end
+
+num -= 1
 end
 
 puts name, age, garlic_bread, insurance
