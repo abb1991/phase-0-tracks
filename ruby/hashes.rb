@@ -15,7 +15,7 @@ user_info = {
   name: "none",
   age: 0,
   theme: "none",
-  fears: "none",
+  fear: "none",
   children: false,
 }
 
@@ -25,7 +25,12 @@ user_info[:name] = gets.chomp
 puts "Age:"
 user_info[:age] = gets.chomp.to_i
 
-puts "theme:"
+puts "Theme:"
 user_info[:theme] = gets.chomp
+
+puts "Greatest fear:"
+user_info[:fear] = gets.chomp
+
+
 
 p user_info
