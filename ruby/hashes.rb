@@ -22,4 +22,7 @@ user_info = {
 puts "Name:"
 user_info[:name] = gets.chomp
 
+puts "Age:"
+user_info[:age] = gets.chomp.to_i
+
 p user_info
