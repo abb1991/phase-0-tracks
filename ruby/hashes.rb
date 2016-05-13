@@ -19,4 +19,7 @@ user_info = {
   children: false,
 }
 
+puts "Name:"
+user_info[:name] = gets.chomp
+
 p user_info
