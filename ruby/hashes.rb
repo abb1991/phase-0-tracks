@@ -25,4 +25,7 @@ user_info[:name] = gets.chomp
 puts "Age:"
 user_info[:age] = gets.chomp.to_i
 
+puts "theme:"
+user_info[:theme] = gets.chomp
+
 p user_info
