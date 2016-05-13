@@ -44,7 +44,7 @@ p user_info
 choice = gets.chomp.downcase
 
 if choice[0] == "y"
-  puts "Great!"
+  puts "I guess these answers will have to do..."
 else
       puts "please re-enter your answers:"
       puts "Name:"
@@ -66,7 +66,9 @@ else
       else
         user_info[:children] = false
       end
+      puts "Thanks for your revised answers. We'll see if that makes any difference. I doubt it."
 end
 
+puts "After careful consideration we here at 'Interior Decliners' have decided to not decorate your home. One consideration was your choice of #{user_info[:theme]} as a theme. It seemed both unrealistic and frankly kind of desperate for attention. Also, it didn't help that you were afraid of #{user_info[:fear]}. Farewell, and please review your input and see where you went wrong:"
 
 p user_info
