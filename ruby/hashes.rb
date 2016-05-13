@@ -31,6 +31,13 @@ user_info[:theme] = gets.chomp
 puts "Greatest fear:"
 user_info[:fear] = gets.chomp
 
+puts "Do you have children? y/n:"
+kids = gets.chomp.downcase
+  if kids[0] == "y"
+    user_info[:children] = true
+  else
+    user_info[:children] = false
+  end
 
 
 p user_info
