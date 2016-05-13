@@ -39,5 +39,34 @@ kids = gets.chomp.downcase
     user_info[:children] = false
   end
 
+puts "Could you check and make sure these are really the answers you want to give? (y/n)"
+p user_info
+choice = gets.chomp.downcase
+
+if choice[0] == "y"
+  puts "Great!"
+else
+      puts "please re-enter your answers:"
+      puts "Name:"
+      user_info[:name] = gets.chomp
+
+      puts "Age:"
+      user_info[:age] = gets.chomp.to_i
+
+      puts "Theme:"
+      user_info[:theme] = gets.chomp
+
+      puts "Greatest fear:"
+      user_info[:fear] = gets.chomp
+
+      puts "Do you have children? y/n:"
+      kids = gets.chomp.downcase
+      if kids[0] == "y"
+        user_info[:children] = true
+      else
+        user_info[:children] = false
+      end
+end
+
 
 p user_info
