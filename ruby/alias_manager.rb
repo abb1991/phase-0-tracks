@@ -15,6 +15,7 @@ first_name_letters = split_name[0].split('')
 last_name_letters = split_name[1].split('')
 
 vowels = ["a","e","i","o","u"]
+consonants = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
 
 first_name_coded_vowels = first_name_letters.map do |letter|
   if vowels.include?(letter)
@@ -32,8 +33,25 @@ last_name_coded_vowels = last_name_letters.map do |letter|
   end
 end
 
+first_name_coded_vowels_consonants = first_name_coded_vowels.map do |letter|
+  if consonants.include?(letter)
+    consonants[(consonants.index(letter)+1)%21]
+  else
+    letter
+  end
+end
 
-p first_name_letters
-p first_name_coded_vowels
-p last_name_letters
-p last_name_coded_vowels
+last_name_coded_vowels_consonants = last_name_coded_vowels.map do |letter|
+  if consonants.include?(letter)
+    consonants[(consonants.index(letter)+1)%21]
+  else
+    letter
+  end
+end
+
+first_code_name = first_name_coded_vowels_consonants.join('').capitalize
+last_code_name = last_name_coded_vowels_consonants.join('').capitalize
+
+code_name = first_code_name + " " + last_code_name
+
+puts code_name
