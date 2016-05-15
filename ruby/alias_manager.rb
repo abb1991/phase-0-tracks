@@ -16,17 +16,24 @@ last_name_letters = split_name[1].split('')
 
 vowels = ["a","e","i","o","u"]
 
-first_name_letters.each do |letter|
+first_name_coded_vowels = first_name_letters.map do |letter|
   if vowels.include?(letter)
-     p vowels[(vowels.index(letter)+1)%5]
+    vowels[(vowels.index(letter)+1)%5]
+  else
+    letter
   end
 end
 
-# last_name_letters.each do |letter|
-#   if vowels.include?(letter)
-#       p letter
-#   end
-# end
+last_name_coded_vowels = last_name_letters.map do |letter|
+  if vowels.include?(letter)
+    vowels[(vowels.index(letter)+1)%5]
+  else
+    letter
+  end
+end
 
-# p first_name_letters
-# p last_name_letters
+
+p first_name_letters
+p first_name_coded_vowels
+p last_name_letters
+p last_name_coded_vowels
