@@ -1,14 +1,13 @@
 def calculator(integer_1, function, integer_2)
 operator = function.to_sym
-
     if operator == :+
-      p integer_1 + integer_2
+      p result = integer_1 + integer_2
     elsif operator == :-
-     p integer_1 - integer_2
+      p result = integer_1 - integer_2
     elsif operator == :*
-      p integer_1 * integer_2
+      p result = integer_1 * integer_2
     else operator == :/
-      p integer_1 / integer_2
+      p result = integer_1 / integer_2
     end
 end
 
@@ -18,9 +17,13 @@ end
 # calculator(3, "*", 4)
 # calculator(15, "/", 5)
 
+all_user_input = []
+all_calculations = []
+
 begin
   puts "Please type in a simple computation (+,-,*,/), for example 1+2:"
   user_input = gets.chomp
+  all_user_input.push(user_input)
 
   if user_input == "done"
     puts "here are your calculations:"
@@ -31,6 +34,10 @@ begin
     user_operator = user_array[1]
     num_2 = user_array[2].to_i
 
-    calculator(num_1, user_operator, num_2)
+    calculation = calculator(num_1, user_operator, num_2)
+    all_calculations.push(calculation)
   end
 end until user_input == "done"
+
+p all_user_input
+p all_calculations
