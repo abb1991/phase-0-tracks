@@ -19,6 +19,7 @@ end
 
 all_user_input = []
 all_calculations = []
+i = 0
 
 begin
   puts "Please type in a simple computation (+,-,*,/), for example 1+2:"
@@ -37,7 +38,13 @@ begin
     calculation = calculator(num_1, user_operator, num_2)
     all_calculations.push(calculation)
   end
+  i += 1
 end until user_input == "done"
 
-p all_user_input
-p all_calculations
+all_calculations << "and done"
+#this is to even out the number of elements in each array so that they iterate in the correct sequence.
+
+while i > 1
+  puts "#{all_user_input[-i]} = #{all_calculations[-i]}"
+  i -= 1
+end
