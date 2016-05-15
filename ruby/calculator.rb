@@ -1,19 +1,19 @@
-def calculator(function)
+def calculator(integer_1, function, integer_2)
 operator = function.to_sym
 
 if operator == :+
-  p 1 + 2
+  p integer_1 + integer_2
 elsif operator == :-
- p 2 - 1
+ p integer_1 - integer_2
 elsif operator == :*
-  p 2 * 2
+  p integer_1 * integer_2
 else operator == :/
-  p 15 / 3
+  p integer_1 / integer_2
 end
 p operator
 end
 
-calculator("/")
+calculator(10, "+", 2)
 
 # p operations = [:+, :-, :*, :/]
 
