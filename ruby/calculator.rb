@@ -13,7 +13,10 @@ end
 p operator
 end
 
-calculator(10, "+", 2)
+# calculator(10, "+", 2)
 
-# p operations = [:+, :-, :*, :/]
+puts "Please type in a simple computation (+,-,*,/), for example 1+2:"
+user_input = gets.chomp
+user_array = user_input.split(" ")
 
+p user_array
