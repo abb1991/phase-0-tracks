@@ -13,60 +13,58 @@ all_names = []
 begin
 puts "What name would you like to classify? (first last)"
 name = gets.chomp.downcase
-if name == "quit"
-  puts "Here are your code names:"
-else
-split_name = name.split(' ').reverse
-
-first_name_letters = split_name[0].split('')
-last_name_letters = split_name[1].split('')
-
-vowels = ["a","e","i","o","u"]
-consonants = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
-
-first_name_coded_vowels = first_name_letters.map do |letter|
-  if vowels.include?(letter)
-    vowels[(vowels.index(letter)+1)%5]
+  if name == "quit"
+    puts "Here are your code names:"
   else
-    letter
+  split_name = name.split(' ').reverse
+
+  first_name_letters = split_name[0].split('')
+  last_name_letters = split_name[1].split('')
+
+  vowels = ["a","e","i","o","u"]
+  consonants = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
+
+  first_name_coded_vowels = first_name_letters.map do |letter|
+    if vowels.include?(letter)
+      vowels[(vowels.index(letter)+1)%5]
+    else
+      letter
+    end
   end
-end
 
-last_name_coded_vowels = last_name_letters.map do |letter|
-  if vowels.include?(letter)
-    vowels[(vowels.index(letter)+1)%5]
-  else
-    letter
+  last_name_coded_vowels = last_name_letters.map do |letter|
+    if vowels.include?(letter)
+      vowels[(vowels.index(letter)+1)%5]
+    else
+      letter
+    end
   end
-end
 
-first_name_coded_vowels_consonants = first_name_coded_vowels.map do |letter|
-  if consonants.include?(letter)
-    consonants[(consonants.index(letter)+1)%21]
-  else
-    letter
+  first_name_coded_vowels_consonants = first_name_coded_vowels.map do |letter|
+    if consonants.include?(letter)
+      consonants[(consonants.index(letter)+1)%21]
+    else
+      letter
+    end
   end
-end
 
-last_name_coded_vowels_consonants = last_name_coded_vowels.map do |letter|
-  if consonants.include?(letter)
-    consonants[(consonants.index(letter)+1)%21]
-  else
-    letter
+  last_name_coded_vowels_consonants = last_name_coded_vowels.map do |letter|
+    if consonants.include?(letter)
+      consonants[(consonants.index(letter)+1)%21]
+    else
+      letter
+    end
   end
-end
 
-first_code_name = first_name_coded_vowels_consonants.join('').capitalize
-last_code_name = last_name_coded_vowels_consonants.join('').capitalize
+  first_code_name = first_name_coded_vowels_consonants.join('').capitalize
+  last_code_name = last_name_coded_vowels_consonants.join('').capitalize
 
-code_name = first_code_name + " " + last_code_name
+  code_name = first_code_name + " " + last_code_name
 
-puts "Here is your code name: #{code_name}. Make another code name! When you are finished type 'I'm done."
+  puts "Here is your code name: #{code_name}. Make another code name! When you are finished type 'quit'."
 
-
-all_names.push(code_name)
+  all_names.push(code_name)
   end
 end until name == "quit"
-
 
 puts all_names
