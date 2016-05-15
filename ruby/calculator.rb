@@ -1,6 +1,19 @@
-def calculator(interger_1, operator, integer_2)
-operations = [+, -, *, /]
-p interger_1 operator integer_2
+def calculator(function)
+operator = function.to_sym
+
+if operator == :+
+  p 1 + 2
+elsif operator == :-
+ p 2 - 1
+elsif operator == :*
+  p 2 * 2
+else operator == :/
+  p 15 / 3
+end
+p operator
 end
 
-calculator(1, '+', 2)
+calculator("/")
+
+# p operations = [:+, :-, :*, :/]
+
