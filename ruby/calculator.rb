@@ -12,12 +12,25 @@ operator = function.to_sym
     end
 end
 
-puts "Please type in a simple computation (+,-,*,/), for example 1+2:"
-user_input = gets.chomp
-user_array = user_input.split(" ")
+# Driver code to test each operator in calculator method
+# calculator(1, "+", 2)
+# calculator(2, "-", 1)
+# calculator(3, "*", 4)
+# calculator(15, "/", 5)
 
-num_1 = user_array[0].to_i
-user_operator = user_array[1]
-num_2 = user_array[2].to_i
+begin
+  puts "Please type in a simple computation (+,-,*,/), for example 1+2:"
+  user_input = gets.chomp
 
-calculator(num_1, user_operator, num_2)
+  if user_input == "done"
+    puts "here are your calculations:"
+  else
+    user_array = user_input.split(" ")
+
+    num_1 = user_array[0].to_i
+    user_operator = user_array[1]
+    num_2 = user_array[2].to_i
+
+    calculator(num_1, user_operator, num_2)
+  end
+end until user_input == "done"
