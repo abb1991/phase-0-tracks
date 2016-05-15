@@ -8,7 +8,11 @@
 # - print code names
 
 puts "What name would you like to classify? (first last)"
-name = gets.chomp
-split_name = name.split(' ')
+name = gets.chomp.downcase
+split_name = name.split(' ').reverse
 
-p split_name
+first_name_letters = split_name[0].split('')
+last_name_letters = split_name[1].split('')
+
+p first_name_letters
+p last_name_letters
