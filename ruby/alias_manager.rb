@@ -7,8 +7,15 @@
 # - ask user if they want to add more code code names
 # - print code names
 
+name = nil
+all_names = []
+
+begin
 puts "What name would you like to classify? (first last)"
 name = gets.chomp.downcase
+if name == "quit"
+  puts "Here are your code names:"
+else
 split_name = name.split(' ').reverse
 
 first_name_letters = split_name[0].split('')
@@ -54,4 +61,12 @@ last_code_name = last_name_coded_vowels_consonants.join('').capitalize
 
 code_name = first_code_name + " " + last_code_name
 
-puts code_name
+puts "Here is your code name: #{code_name}. Make another code name! When you are finished type 'I'm done."
+
+
+all_names.push(code_name)
+  end
+end until name == "quit"
+
+
+puts all_names
