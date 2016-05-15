@@ -14,5 +14,19 @@ split_name = name.split(' ').reverse
 first_name_letters = split_name[0].split('')
 last_name_letters = split_name[1].split('')
 
-p first_name_letters
-p last_name_letters
+vowels = ["a","e","i","o","u"]
+
+first_name_letters.each do |letter|
+  if vowels.include?(letter)
+     p vowels[(vowels.index(letter)+1)%5]
+  end
+end
+
+# last_name_letters.each do |letter|
+#   if vowels.include?(letter)
+#       p letter
+#   end
+# end
+
+# p first_name_letters
+# p last_name_letters
