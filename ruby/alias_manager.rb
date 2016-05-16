@@ -1,8 +1,8 @@
 # - ask user for name, first and last
-# - break name into seperate lowercase words, add to array
-# - write vowel method that moves vowel to next (be careful of edge cases, consider y)
-# - writed method to take consonants and move them to next consonant.
-# - switch first and last name (.reverse), and capitalize
+# - break name into seperate lowercase words, add to array, switch first and last name (.reverse)
+# - write vowel block that moves vowel to next (be careful of edge cases, consider y)
+# - write block to take consonants and move them to next consonant.
+# - capitalize
 # - push new name to array of code names
 # - ask user if they want to add more code code names
 # - print code names
