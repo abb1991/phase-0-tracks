@@ -1,0 +1,18 @@
+.classtopus {
+  position: relative;
+}
+#octopus {
+  position: fixed;
+  left:275px;
+  z-index: -1;
+  padding: 100px;
+}
+#glasses{
+  position: fixed;
+  left:415px;
+  top:205px;
+}
+#hat  {
+  position: fixed;
+  left: 355px;
+}

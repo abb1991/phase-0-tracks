@@ -1,0 +1,37 @@
+section#contact-info {
+  font-size: .8em;
+}
+
+.job {
+  background-color: #e9e5dc;
+  border-radius: 5px;
+  padding: 5px;
+  margin-top: 5px;
+}
+
+ul.unordered {
+  font-size: .8em;
+}
+
+/* cascading means that css functions from parent to child functions, and will use whatever rule occurs first. For example, if you gave your <body> a color: blue css element, but added a <div> color: red element, the <body> color would take precedence.*/
+
+body {
+  color: blue;
+}
+
+div {
+  color: red;
+}
+
+
+/* here is a pseudoselector example. Pseudo selectors are css attributes that are triggered by a : and usually function through interaction of the cursor.*/
+
+a:link {
+  color: grey;
+}
+
+/* selecting a child element of another element ivolves using the > function, which takes an element and matches it to a direct child of that element*/
+
+li>a {
+  color: orange;
+}
