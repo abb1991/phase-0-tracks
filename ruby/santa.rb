@@ -18,4 +18,10 @@ class Santa
 end
 
 santas = []
+example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+
+
+
 santas << Santa.new("agender", "black" )
+
