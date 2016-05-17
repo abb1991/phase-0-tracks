@@ -25,23 +25,31 @@
 # steps:
 # output:
 
-
 puts "Please enter each item in your shopping list, separated by a space (milk eggs cookies):"
 shopping_str = gets.chomp.downcase
 shopping_arr = shopping_str.split(" ")
 p shopping_arr
 
-
 shopping_hash = {}
+
 shopping_arr.each do |item|
   shopping_hash[item] = 0
 end
 
-def add_item(item, quantity)
-add_item_hash = {item => quantity}
-return add_item_hash
-end
+item = "milk"
+quantity = "5"
 
-shopping_hash.merge!(add_item("milk", 1))
+shopping_hash.merge!(add_item_hash = {item => quantity})
 
+
+
+# def delete_item(hash, item_index)
+#   yield
+#   puts "What item would you like to delete?"
+#   delete_item_index = gets.chomp.to_i
+# end
+
+
+
+# delete_item(1)
 p shopping_hash
