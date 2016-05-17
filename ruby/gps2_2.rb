@@ -30,3 +30,11 @@ puts "Please enter each item in your shopping list, separated by a space (milk e
 shopping_str = gets.chomp.downcase
 shopping_arr = shopping_str.split(" ")
 p shopping_arr
+
+
+shopping_hash = {}
+shopping_arr.each do |item|
+  h[item] = 0
+end
+
+p shopping_hash
