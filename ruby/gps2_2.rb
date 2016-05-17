@@ -26,4 +26,7 @@
 # output:
 
 
-shopping_arr =
+puts "Please enter each item in your shopping list, separated by a space (milk eggs cookies):"
+shopping_str = gets.chomp.downcase
+shopping_arr = shopping_str.split(" ")
+p shopping_arr
