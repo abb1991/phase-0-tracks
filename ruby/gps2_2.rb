@@ -34,7 +34,14 @@ p shopping_arr
 
 shopping_hash = {}
 shopping_arr.each do |item|
-  h[item] = 0
+  shopping_hash[item] = 0
 end
+
+def add_item(item, quantity)
+add_item_hash = {item => quantity}
+return add_item_hash
+end
+
+shopping_hash.merge!(add_item("milk", 1))
 
 p shopping_hash
