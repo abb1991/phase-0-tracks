@@ -11,8 +11,8 @@
 # output: item and optional quantity pushed to existing hash
 
 # Method to remove an item from the list
-# input: hash index, and use DELETE_AT method to remove item and quantity from hash
-# steps: Ask user if they want to delete an item, print list of all items with associated idexes, user selects index GETS.CHOMP.TO_I, and user input is passed to DELETE_AT(USER INPUT) method.
+# input: hash index, and use DELETE method to remove item and quantity from hash
+# steps: Ask user if they want to delete an item, print list of all items, user selects item GETS.CHOMP, and user input is passed to DELETE(USER INPUT) method.
 # output: a revised list should be printed to user
 
 # Method to update the quantity of an item
@@ -41,15 +41,9 @@ quantity = "5"
 
 shopping_hash.merge!(add_item_hash = {item => quantity})
 
+p shopping_hash
 
+user_input = "milk"
+shopping_hash.delete(user_input)
 
-# def delete_item(hash, item_index)
-#   yield
-#   puts "What item would you like to delete?"
-#   delete_item_index = gets.chomp.to_i
-# end
-
-
-
-# delete_item(1)
 p shopping_hash
