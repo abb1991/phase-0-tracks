@@ -16,11 +16,15 @@ class City_creator
     @name = name
     @population = rand(1...100) * 100000
     @continent = continents[rand(0...6)]
-    @attractions = nil
+    @attractions = "no"
   end
 
   def reduce_population
     @population = population/2
+  end
+
+  def city_info
+    puts "#{@name}, a city of #{@population} is located in #{@continent}, and has #{@attractions} attractions."
   end
 
 end
@@ -29,11 +33,33 @@ all_cities = []
 
 
 # driver code
-all_cities << City_creator.new("Milwaukee")
-all_cities << City_creator.new("Santa Fe")
-p all_cities
+# p milwaukee = City_creator.new("Milwaukee")
+# p santa_fe = City_creator.new("Santa Fe")
 
-all_cities[0].attractions = "All sorts!"
-all_cities[0].reduce_population
-p all_cities
+# santa_fe.attractions = "hiking"
 
+# p milwaukee.reduce_population
+# p santa_fe.city_info
+
+
+# user interface
+
+
+begin
+puts "Please enter the name of the city you'd like to create:"
+city_name = gets.chomp
+
+new_city = City_creator.new(city_name)
+
+puts "What attractions are in your city?"
+city_attractions = gets.chomp
+new_city.attractions = city_attractions
+
+puts "Here is your newly created city!"
+p new_city.city_info
+
+puts "Would you like to make another city? (y/n)"
+continue = gets.chomp.downcase
+end until continue[0] == "n"
+
+puts "Enjoy your new cities!"
