@@ -27,6 +27,13 @@ class City_creator
     puts "#{@name}, a city of #{@population} is located in #{@continent}, and has #{@attractions} attractions."
   end
 
+  def end_city_info
+    puts "name: #{@name}"
+    puts "population: #{@population}"
+    puts "continent: #{@continent}"
+    puts "attractions: #{@attractions}"
+    puts " "
+  end
 end
 
 all_cities = []
@@ -44,6 +51,7 @@ all_cities = []
 
 # user interface
 
+all_cities = []
 
 begin
 puts "Please enter the name of the city you'd like to create:"
@@ -60,6 +68,10 @@ p new_city.city_info
 
 puts "Would you like to make another city? (y/n)"
 continue = gets.chomp.downcase
+all_cities.push(new_city)
 end until continue[0] == "n"
 
-puts "Enjoy your new cities!"
+puts "Enjoy all your new cities!"
+all_cities.each do |city|
+  p city.end_city_info
+end
