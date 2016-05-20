@@ -7,7 +7,7 @@ class Santa
     @gender = gender
     @ethnicity = ethnicity
     @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
-    @age = 0
+    @age = rand(0...140)
   end
 
   # # setter method
@@ -47,20 +47,27 @@ santas = []
 example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
 example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
 
-
-
 example_genders.length.times do |i|
   santas << Santa.new(example_genders[i], example_ethnicities[i])
 end
 
 # driver code
 
-santa = Santa.new("agender", "black")
+# santa = Santa.new("agender", "black")
 
-p santa.celebrate_birthday
-p santa.get_mad_at("Rudolph")
+# santa.gender = "BOY!"
 
-santa.gender = "BOY!"
+# p santa.celebrate_birthday
+# p santa.get_mad_at("Rudolph")
+# p santa.age
+# p santa.ethnicity
 
-p santa.age
-p santa.ethnicity
+# random santa generator
+
+random_santas = []
+
+ 10.times do
+  random_santas << Santa.new(example_genders[rand(0...6)], example_ethnicities[rand(0...6)])
+end
+
+p random_santas
