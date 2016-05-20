@@ -25,6 +25,8 @@
 # steps:
 # output:
 
+#business logic
+
 puts "Please enter each item in your shopping list, separated by a space (milk eggs cookies):"
 shopping_str = gets.chomp.downcase
 shopping_arr = shopping_str.split(" ")
@@ -36,7 +38,7 @@ shopping_arr.each do |item|
   shopping_hash[item] = 0
 end
 
-item = "milk"
+item = "juice"
 quantity = "5"
 
 shopping_hash.merge!(add_item_hash = {item => quantity})
@@ -47,3 +49,5 @@ user_input = "milk"
 shopping_hash.delete(user_input)
 
 p shopping_hash
+
+#user interface

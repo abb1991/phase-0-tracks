@@ -8,12 +8,26 @@ class Santa
     @age = 0
   end
 
+  def gender=(new_gender)
+    @gender = new_gender
+  end
+
+  def celebrate_birthday
+    b_day_age = @age + 1
+  end
+
+  def get_mad_at(reindeer)
+    index = @reindeer_ranking.index(reindeer)
+    reindeer_to_end = @reindeer_ranking.slice!(index)
+    @reindeer_ranking << reindeer_to_end
+  end
+
   def speak
-    p "Ho, ho, ho! Haaaappy holidays!"
+    puts "Ho, ho, ho! Haaaappy holidays!"
   end
 
   def eat_milk_and_cookies
-    p "That was a good #{cookie}"
+    puts "That was a good #{cookie}"
   end
 
 end
@@ -24,6 +38,11 @@ example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer n
 
 
 
-santas << Santa.new("agender", "black" )
+example_genders.length.times do |i|
+  santas << Santa.new(example_genders[i], example_ethnicities[i])
+end
 
 
+santa = Santa.new("agender", "black")
+p santa.celebrate_birthday
+p santa.get_mad_at("Rudolph")

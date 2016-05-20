@@ -7,9 +7,9 @@ num = gets.chomp.to_i
     name = gets.chomp.downcase
 
     case name
-    when name == "drake cula"
+    when name == 'drake cula'
       name = true
-    when name == "tu fang"
+    when name == 'tu fang'
       name = true
     else
       name = false
@@ -27,7 +27,7 @@ num = gets.chomp.to_i
     puts "Our company cafeteria serves garlic bread. Should we order some for you?"
     garlic_bread = gets.chomp
 
-    if garlic_bread == "yes"
+    if garlic_bread == 'yes'
       garlic_bread = true
     else
       garlic_bread = false
@@ -36,7 +36,7 @@ num = gets.chomp.to_i
     puts "Would you like to enroll in the company's health insurance?"
     insurance = gets.chomp
 
-    if insurance == "yes"
+    if insurance == 'yes'
       insurance = true
     else
       insurance = false
@@ -44,13 +44,13 @@ num = gets.chomp.to_i
 
     puts "do you have any allergies?"
     allergies = nil
-    while allergies != "sunshine"
+    while allergies != 'sunshine'
       puts "Allegires:"
       allergies = gets.chomp.downcase
-      if allergies == "sunshine"
+      if allergies == 'sunshine'
         puts "probably a vampire"
         break
-      elsif allergies == "done"
+      elsif allergies == 'done'
         break
       else
 
@@ -60,7 +60,7 @@ num = gets.chomp.to_i
     case
     when name = true
       puts "Definitely a vampire."
-    when !age && !garlic_bread && !insurance
+    when !age && !(garlic_bread && insurance)
       puts "Almost certainly a vampire."
     when !age && !(garlic_bread || insurance)
       puts "Probably a vampire."
