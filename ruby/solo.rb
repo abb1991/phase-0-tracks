@@ -8,29 +8,32 @@
 
 class City_creator
 
-  attr_reader :name
-  attr_accessor :population, :country
+  attr_reader :name, :population, :continent
+  attr_accessor :attractions
 
   def initialize(name)
     continents = ["Asia", "North America", "South America", "Oceania", "Africa", "Europe", "Antarctica"]
     @name = name
     @population = rand(1...100) * 100000
     @continent = continents[rand(0...6)]
+    @attractions = nil
   end
 
-  def add_population(population)
-    @population = population
-  end
-
-  def add_country(country)
-    @country = country
+  def reduce_population
+    @population = population/2
   end
 
 end
 
 all_cities = []
 
-all_cities = City_creator.new("Milwaukee")
-# all_cities.add_population("600,000")
 
+# driver code
+all_cities << City_creator.new("Milwaukee")
+all_cities << City_creator.new("Santa Fe")
 p all_cities
+
+all_cities[0].attractions = "All sorts!"
+all_cities[0].reduce_population
+p all_cities
+
