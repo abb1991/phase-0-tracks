@@ -8,8 +8,17 @@ class Santa
     @age = 0
   end
 
+  # setter method
   def gender=(new_gender)
     @gender = new_gender
+  end
+  # getter methods
+  def age
+    @age
+  end
+
+  def ethnicity
+    @ethnicity
   end
 
   def celebrate_birthday
@@ -42,7 +51,12 @@ example_genders.length.times do |i|
   santas << Santa.new(example_genders[i], example_ethnicities[i])
 end
 
-
+# driver code
 santa = Santa.new("agender", "black")
 p santa.celebrate_birthday
 p santa.get_mad_at("Rudolph")
+
+santa.gender = "BOY!"
+
+p santa.age
+p santa.ethnicity
