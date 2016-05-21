@@ -1,20 +1,47 @@
+# module Shout
+#   def self.yell_angrily(words)
+#     words + "!!!" + ":("
+#   end
+
+#   def self.yell_happily(words)
+#     words + "!!!" + ":)"
+#   end
+# end
+
+
+# # driver code
+
+# require_relative 'Shout'
+
+# test_str = "I am feeling very emotional"
+
+# p Shout.yell_happily(test_str)
+# p Shout.yell_angrily(test_str)
+
+
 module Shout
-  def self.yell_angrily(words)
+  def yell_angrily(words)
     words + "!!!" + ":("
   end
 
-  def self.yell_happily(words)
+  def yell_happily(words)
     words + "!!!" + ":)"
   end
-
 end
 
+class High_fives
+  include Shout
+end
 
-# driver code
+class Stubbing_toe
+  include Shout
+end
 
-require_relative 'Shout'
+# driver
 
-test_str = "I am feeling very emotional"
+high_five = High_fives.new
+stubbing_toe = Stubbing_toe.new
 
-# puts yell_happily(test_str)
-# puts test_str.yell_angrily
+
+p high_five.yell_happily("High five")
+p stubbing_toe.yell_angrily("Ouch")
