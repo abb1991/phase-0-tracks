@@ -38,41 +38,43 @@ shopping_arr.each do |item|
   shopping_hash[item] = 0
 end
 
-# item = "juice"
-# quantity = "5"
-
 user_choice = 0
 
-begin
-  if user_choice[0] == "a"
-  # add item/change item quantity
-    puts "Please list item you wish to add/change. (ex: eggs)"
-      item = gets.chomp
-    puts "Please enter amount. (ex: 12)"
-      quantity = gets.chomp.to_i
-  shopping_hash.merge!(add_item_hash = {item => quantity})
-
-  p shopping_hash
-
-  # delete item
-  elsif user_choice == "r"
-
-  delete_item = "milk"
-  shopping_hash.delete(delete_item)
-
-  p shopping_hash
-  else
-  p shopping_hash
-  end
-
 #user interface
+
+begin
+    if user_choice[0] == "a"
+      # add item/change item quantity
+        puts "Please list item you wish to add/change. (ex: eggs)"
+          item = gets.chomp
+        puts "Please enter amount. (ex: 12)"
+          quantity = gets.chomp.to_i
+      shopping_hash.merge!(add_item_hash = {item => quantity})
+
+      p shopping_hash
+
+      # delete item
+    elsif user_choice[0] == "r"
+      puts "What item would you like to delete?"
+      delete_item = gets.chomp
+      shopping_hash.delete(delete_item)
+      puts "Item deleted:"
+      p shopping_hash
+    else
+      shopping_hash.each do |item, quantity|
+      puts "#{item}: #{quantity}"
+    end
+  end
 
 puts "Would you like to add, remove, or change the amount of any item on your list? ('add', 'remove', 'amount')"
 user_choice = gets.chomp.downcase
 
 end while "add remove amount".include?(user_choice)
 
-p shopping_hash
+puts "Here is your shopping list"
 
-#driver code
+shopping_hash.each do |item, quantity|
+  puts "#{item}: #{quantity}"
+end
+
 
