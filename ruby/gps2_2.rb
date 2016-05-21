@@ -27,7 +27,7 @@
 
 #business logic
 
-puts "Please enter each item in your shopping list, separated by a space (milk eggs cookies):"
+puts "Please enter each item in your shopping list, separated by a space (ex: milk eggs cookies):"
 shopping_str = gets.chomp.downcase
 shopping_arr = shopping_str.split(" ")
 p shopping_arr
@@ -38,16 +38,41 @@ shopping_arr.each do |item|
   shopping_hash[item] = 0
 end
 
-item = "juice"
-quantity = "5"
+# item = "juice"
+# quantity = "5"
 
-shopping_hash.merge!(add_item_hash = {item => quantity})
+user_choice = 0
 
-p shopping_hash
+begin
+  if user_choice[0] == "a"
+  # add item/change item quantity
+    puts "Please list item you wish to add/change. (ex: eggs)"
+      item = gets.chomp
+    puts "Please enter amount. (ex: 12)"
+      quantity = gets.chomp.to_i
+  shopping_hash.merge!(add_item_hash = {item => quantity})
 
-user_input = "milk"
-shopping_hash.delete(user_input)
+  p shopping_hash
 
-p shopping_hash
+  # delete item
+  elsif user_choice == "r"
+
+  delete_item = "milk"
+  shopping_hash.delete(delete_item)
+
+  p shopping_hash
+  else
+  p shopping_hash
+  end
 
 #user interface
+
+puts "Would you like to add, remove, or change the amount of any item on your list? ('add', 'remove', 'amount')"
+user_choice = gets.chomp.downcase
+
+end while "add remove amount".include?(user_choice)
+
+p shopping_hash
+
+#driver code
+
