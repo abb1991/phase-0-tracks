@@ -20,17 +20,12 @@
 # steps:ask user if they want to update the quantity of an item GETS.CHOMP(Y/N). Create new hash containing a copy of the key from the user's update selection, and a value of user input GETS.CHOMP.TO_I, then MERGE! the two hashes. The value from the new hash will replace the value from the old.
 # output: updated hash with new item quantity.
 
-# Method to print a list and make it look pretty
-# input: no input
-# steps:
-# output:
 
 #business logic
 
 puts "Please enter each item in your shopping list, separated by a space (ex: milk eggs cookies):"
 shopping_str = gets.chomp.downcase
 shopping_arr = shopping_str.split(" ")
-p shopping_arr
 
 shopping_hash = {}
 
@@ -50,8 +45,9 @@ begin
         puts "Please enter amount. (ex: 12)"
           quantity = gets.chomp.to_i
       shopping_hash.merge!(add_item_hash = {item => quantity})
-
-      p shopping_hash
+      shopping_hash.each do |item, quantity|
+      puts "#{item}: #{quantity}"
+    end
 
       # delete item
     elsif user_choice[0] == "r"
@@ -59,7 +55,9 @@ begin
       delete_item = gets.chomp
       shopping_hash.delete(delete_item)
       puts "Item deleted:"
-      p shopping_hash
+      shopping_hash.each do |item, quantity|
+      puts "#{item}: #{quantity}"
+    end
     else
       shopping_hash.each do |item, quantity|
       puts "#{item}: #{quantity}"
