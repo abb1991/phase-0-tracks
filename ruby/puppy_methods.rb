@@ -70,7 +70,4 @@ arr.each do |i|
   puts "\n"
 end
 
-
-
-
 p arr
