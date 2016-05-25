@@ -1,7 +1,7 @@
 # Virus Predictor
 
-# I worked on this challenge [by myself, with: Alex Bills ].
-# We spent [#] hours on this challenge.
+# I worked on this challenge with Kaitlyn .Bradshaw
+# We spent 2ish hours on this challenge.
 
 # EXPLANATION OF require_relative
 # Require relative you use when looking for a file in the same directory or a file in
@@ -132,3 +132,14 @@ end
 
 #=======================================================================
 # Reflection Section
+This challenge presented a number of new considerations, including when to use the 'private' method in a class, as well as how to address and refact code writting by another programmer.
+
+The two different types of hashes in the data file were the use of the rocket hash (=>) and the symbols syntax, where the colon follows the symbol name (e.g. symbol:).
+
+require relatice v. require see lns 6-10.
+
+A hash can be interated through using methods like .each, and .times, where you feed the values of the hash to a block.
+
+the redundant inclusion of parameters stood out to my pair, Kaitlyn, when first looking at the virus_effects method.
+
+This challenge most solidified interating through blocks, and ways to approach refactoring a program.
