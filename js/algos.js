@@ -18,21 +18,27 @@
 // }
 
 function keyValue(objLitOne, objLitTwo) {
-  keyArrOne = Object.keys(objLitOne);
-  keyArrTwo = Object.keys(objLitTwo);
+  var keyArrOne = Object.keys(objLitOne);
+  var keyArrTwo = Object.keys(objLitTwo);
 
   for (var i = 0; i < keyArrOne.length; i++){
     if (keyArrTwo.indexOf(keyArrOne[i]) > -1){
-      console.log(keyArrOne[i])
+      console.log(keyArrOne[i]);
       console.log("true");
     } else {
       console.log("false");
     };
   };
-  for (var key in objLitOne){
-   console.log(objLitOne.keyArrOne);
-   console.log(objLitTwo.keyArrTwo);
+
+  for (var keyArrOne in objLitOne) {
+    var value = objLitOne.keyArrOne
+    console.log(typeof value)
   }
+
+  // for (var i = 0; i < keyArrOne.length; i++) {
+  //     var newKey = keyArrOne[i];
+  //   // console.log(objLitTwo.keyArrTwo[i]);
+  // }
 };
 
 // driver code
@@ -43,7 +49,7 @@ function keyValue(objLitOne, objLitTwo) {
 objLitOne = {
   lives: "office",
   ears: 2,
-  "name": "Maya"
+  name: "Maya"
 } ;
 
 objLitTwo = {
@@ -54,4 +60,4 @@ objLitTwo = {
 
 keyValue(objLitOne, objLitTwo) ;
 
-// console.log(Object.keys(objLitOne))
+// console.log("lives:")
