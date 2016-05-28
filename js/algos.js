@@ -4,21 +4,54 @@
 
 // business logic
 
-function length_checker(str){
-  var longest_phrase_i = 0;
-  for (var i = 0; i < str.length; i++){
-    var str_length = (str[i].length);
-    if (str_length > longest_phrase_i) {
-      longest_phrase_i = str_length;
-      longest_phrase_str = str[i];
-    }
+// function longestStr(str){
+//   var longestPhraseI = 0;
+//   for (var i = 0; i < str.length; i++){
+//     var strLength = (str[i].length);
+//     if (strLength > longestPhraseI) {
+//       longestPhraseI = strLength;
+//       longestPhraseStr = str[i];
+//     }
+//   }
+//   console.log(longestPhraseI);
+//   console.log(longestPhraseStr);
+// }
+
+function keyValue(objLitOne, objLitTwo) {
+  keyArrOne = Object.keys(objLitOne);
+  keyArrTwo = Object.keys(objLitTwo);
+
+  for (var i = 0; i < keyArrOne.length; i++){
+    if (keyArrTwo.indexOf(keyArrOne[i]) > -1){
+      console.log(keyArrOne[i])
+      console.log("true");
+    } else {
+      console.log("false");
+    };
+  };
+  for (var key in objLitOne){
+   console.log(objLitOne.keyArrOne);
+   console.log(objLitTwo.keyArrTwo);
   }
-  console.log(longest_phrase_i);
-  console.log(longest_phrase_str);
-}
+};
 
 // driver code
-var arr = ["short", "longer","I am by far the longest phrase", "longest", "even longer"];
-length_checker(arr);
 
+// var arr = ["short", "longer","I am by far the longest phrase", "longest", "even longer"];
+// longestStr(arr);
 
+objLitOne = {
+  lives: "office",
+  ears: 2,
+  "name": "Maya"
+} ;
+
+objLitTwo = {
+  "name": "Alex",
+  place: "home",
+  feet: 2
+} ;
+
+keyValue(objLitOne, objLitTwo) ;
+
+// console.log(Object.keys(objLitOne))
