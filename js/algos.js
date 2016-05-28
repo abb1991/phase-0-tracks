@@ -17,46 +17,46 @@
 //   console.log(longestPhraseStr);
 // }
 
-function keyValue(objLitOne, objLitTwo) {
-  var keyArrOne = Object.keys(objLitOne);
-  var keyArrTwo = Object.keys(objLitTwo);
+// function keyValue(objLitOne, objLitTwo) {
+//   var keyArrOne = Object.keys(objLitOne);
+//   var keyArrTwo = Object.keys(objLitTwo);
 
-  for (var i = 0; i < keyArrOne.length; i++){
-    if (keyArrTwo.indexOf(keyArrOne[i]) > -1){
-      console.log(keyArrOne[i]);
-      console.log("true");
-    } else {
-      console.log("false");
-    };
-  };
+//   for (var i = 0; i < keyArrOne.length; i++){
+//     if (keyArrTwo.indexOf(keyArrOne[i]) > -1){
+//       console.log(keyArrOne[i]);
+//       console.log("true");
+//     } else {
+//       console.log("false");
+//     };
+//   };
 
-  for (var keyArrOne in objLitOne) {
-    var value = objLitOne[keyArrOne];
-    for (var keyArrTwo in objLitTwo){
-      if (value === objLitTwo[keyArrTwo]) {
-        console.log(objLitTwo[keyArrTwo]);
-        console.log("true");
-      } else {
-        console.log("false");
-      };
-    };
-  }
+//   for (var keyArrOne in objLitOne) {
+//     var value = objLitOne[keyArrOne];
+//     for (var keyArrTwo in objLitTwo){
+//       if (value === objLitTwo[keyArrTwo]) {
+//         console.log(objLitTwo[keyArrTwo]);
+//         console.log("true");
+//       } else {
+//         console.log("false");
+//       };
+//     };
+//   }
 
   // for (var i = 0; i < keyArrOne.length; i++) {
   //     var newKey = keyArrOne[i];
   //   // console.log(objLitTwo.keyArrTwo[i]);
   // }
-};
+// };
 
 // pseudocode
 
 // create a fucntion that generates a random number. That number represents the number of strings in the array. The next random number generated represents the number of words in a given array. The next number the number of letter in the word, and the next number the letter in the alphabet.
 
-// function randomString() {
-//   var numRand = Math.floor(Math.random() * 11);
-//   var randArr = [] * numRand
-//   console.log(randArr)
-// }
+function randomString() {
+  var numRand = Math.floor(Math.random() * 11);
+  var randArr = [] * numRand
+  console.log(randArr)
+}
 
 
 // driver code
@@ -64,24 +64,24 @@ function keyValue(objLitOne, objLitTwo) {
 // var arr = ["short", "longer","I am by far the longest phrase", "longest", "even longer"];
 // longestStr(arr);
 
-objLitOne = {
-  lives: "office",
-  ears: 2,
-  name: "Maya"
-} ;
+// objLitOne = {
+//   lives: "office",
+//   ears: 2,
+//   name: "Maya"
+// } ;
 
-objLitTwo = {
-  "name": "Alex",
-  place: "home",
-  feet: 2
-} ;
+// objLitTwo = {
+//   "name": "Alex",
+//   place: "home",
+//   feet: 2
+// } ;
 
-keyValue(objLitOne, objLitTwo) ;
+// keyValue(objLitOne, objLitTwo) ;
 
 // var randomNumberBetween0and19 = Math.floor(Math.random() * 20);
 
 // console.log(randomNumberBetween0and19)
 
-// randomString()
+randomString()
 
 
