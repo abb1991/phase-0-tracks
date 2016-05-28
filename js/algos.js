@@ -5,7 +5,11 @@
 var arr = ["short", "longer", "longest", "even longer"]
 
 function length_checker(str){
-  console.log(str.length)
+  for (var i = 0; i < str.length; i++){
+    console.log(str[i].length)
+  }
 }
 
 length_checker(arr)
+
+
