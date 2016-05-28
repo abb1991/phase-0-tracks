@@ -31,8 +31,15 @@ function keyValue(objLitOne, objLitTwo) {
   };
 
   for (var keyArrOne in objLitOne) {
-    var value = objLitOne.keyArrOne
-    console.log(typeof value)
+    var value = objLitOne[keyArrOne];
+    for (var keyArrTwo in objLitTwo){
+      if (value === objLitTwo[keyArrTwo]) {
+        console.log(objLitTwo[keyArrTwo]);
+        console.log("true");
+      } else {
+        console.log("false");
+      };
+    };
   }
 
   // for (var i = 0; i < keyArrOne.length; i++) {
@@ -40,6 +47,17 @@ function keyValue(objLitOne, objLitTwo) {
   //   // console.log(objLitTwo.keyArrTwo[i]);
   // }
 };
+
+// pseudocode
+
+// create a fucntion that generates a random number. That number represents the number of strings in the array. The next random number generated represents the number of words in a given array. The next number the number of letter in the word, and the next number the letter in the alphabet.
+
+// function randomString() {
+//   var numRand = Math.floor(Math.random() * 11);
+//   var randArr = [] * numRand
+//   console.log(randArr)
+// }
+
 
 // driver code
 
@@ -60,4 +78,10 @@ objLitTwo = {
 
 keyValue(objLitOne, objLitTwo) ;
 
-// console.log("lives:")
+// var randomNumberBetween0and19 = Math.floor(Math.random() * 20);
+
+// console.log(randomNumberBetween0and19)
+
+// randomString()
+
+
