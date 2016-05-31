@@ -52,11 +52,30 @@
 
 // create a fucntion that generates a random number. That number represents the number of strings in the array. The next random number generated represents the number of words in a given array. The next number the number of letter in the word, and the next number the letter in the alphabet.
 
-function randomString() {
-  var numRand = Math.floor(Math.random() * 11);
-  var randArr = [] * numRand
-  console.log(randArr)
-}
+function randomString(num) {
+  var alph = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w","x", "y", "z"];
+  var arr = [];
+  var arrStr = [];
+  for (i = num; i > 0; i--) {
+    var numRand = Math.floor(Math.random()*11);
+    arr.push(numRand);
+    var randWord = []
+    for (x = numRand; x > 0; x--){
+      if (x > 1){
+        var randLetterIndex = Math.floor(Math.random()*26);
+        randWord.push(alph[randLetterIndex]);
+      } else {
+        var randLetterIndex = Math.floor(Math.random()*26);
+        randWord.push(alph[randLetterIndex]);
+      };
+          };
+    var newStr = randWord.join('');
+    console.log(newStr);
+    arrStr.push(newStr);
+  };
+  console.log(arr);
+  console.log(arrStr);
+};
 
 
 // driver code
@@ -82,6 +101,7 @@ function randomString() {
 
 // console.log(randomNumberBetween0and19)
 
-randomString()
+randomString(3)
+
 
 
