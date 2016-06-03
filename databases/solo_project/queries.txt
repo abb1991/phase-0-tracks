@@ -1,0 +1,39 @@
+1)Display the information in one table (either table is fine).
+
+sqlite3 movies.db
+SQLite version 3.8.10.2 2015-05-20 18:17:19
+Enter ".help" for usage hints.
+sqlite> SELECT * FROM movies;
+1|Her|23|true|1
+2|2001: A Space Odyssey|11|true|2
+3|Cat Woman|100|false|1
+sqlite>
+
+2) Update an item that meets some condition (you can choose a condition that makes sense).
+
+sqlite> UPDATE studios set name="Warner Brothers" WHERE name="Warner Bros";
+sqlite> SELECT * FROM studios;
+|Warner Brothers
+|MGM
+sqlite>
+
+3) Display the information in both tables using one query.
+
+SELECT movies.title, movies.budget_millions, movies.critical_acclaim,  studios.name FROM movies JOIN studios ON movies.studio_id = studios.id;
+Her|23|true|Warner Brothers
+2001: A Space Odyssey|11|true|MGM
+Cat Woman|100|false|Warner Brothers
+
+4) Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+
+SELECT movies.title, studios.name FROM movies JOIN studios ON movies.studio_id = studios.id;
+Her|Warner Brothers
+2001: A Space Odyssey|MGM
+Cat Woman|Warner Brothers
+
+5) Delete an item that meets some condition (you can choose a condition that makes sense).
+
+DELETE FROM movies WHERE title="Cat Woman";
+sqlite> SELECT * FROM movies;
+1|Her|23|true|1
+2|2001: A Space Odyssey|11|true|2
