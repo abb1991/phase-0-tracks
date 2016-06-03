@@ -37,3 +37,16 @@ DELETE FROM movies WHERE title="Cat Woman";
 sqlite> SELECT * FROM movies;
 1|Her|23|true|1
 2|2001: A Space Odyssey|11|true|2
+
+Inner Join:
+
+SELECT TITLE, BUDGET_MILLIONS, NAME FROM MOVIES INNER JOIN STUDIOS ON MOVIES.STUDIO_ID = STUDIOS.ID;
+Her|23|Warner Brothers
+2001: A Space Odyssey|11|MGM
+sqlite>
+
+Self Join:
+
+SELECT a.ID, b.BUDGET_MILLIONS, a.TITLE FROM MOVIES a, MOVIES b WHERE a.BUDGET_MILLIONS < b.BUDGET_MILLIONS;
+2|23|2001: A Space Odyssey
+sqlite>
