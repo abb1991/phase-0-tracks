@@ -4,9 +4,13 @@
 
 # The game:
 
-  - each round either the computer (with a randomly assigned name) or the user will be randomly choosen to start first. The game begins with the number 21 (imagine 21 pencils on a table). The player may chose to remove 1,2, or 3 from the total, e.g. the first player choses 3, and 18 remain. It is then the next player's turn to remove 1,2, or 3. The object of the game is to be the person to reach 0 first.
+  - each round either the computer (with a randomly assigned name) or the user will be randomly choosen to start first. The game begins with the number 21 (imagine 21 pencils on a table). The player may chose to remove 1,2, or 3 from the total, e.g. the first player choses 3, and 18 remain. It is then the next player's turn to remove 1,2, or 3. The object of the game is to be the person to reach 0.
 
 # Pseudocode
+
+  - Create a database of the win/loss results:
+    - db = SQLite3::Database.new("stick_game.db")
+
 
   - Create a new game:
     - Define a method, stick_game, with no user input. WHILE variable count is greater than 0, the game sequence will run.
@@ -16,16 +20,10 @@
             db.execute("INSERT INTO game_results (computer_name, win_loss) VALUES (?, ?)", [computer_name, win_loss])
             end
 
-
-
-
-  - Create a database of the win/loss results:
-    - db = SQLite3::Database.new("stick_game.db")
-
-
 # require gems
 require 'sqlite3'
 require 'faker'
+
 
 
 
