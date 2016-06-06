@@ -34,14 +34,25 @@ count = 21
   begin
     puts "How many would you like to take away? (1,2,3)"
     user_num = gets.chomp.to_i
-    count = count - user_num
-    p count
-    puts "Here is the computer's move:"
-    computer_turn = count % 4
-    p computer_turn
-    count = count - computer_turn
-    p count
+
+    if user_num > 3
+      puts "Please enter a valid number."
+    elsif user_num < 1
+      puts "Please enter a valid number."
+    else
+      count = count - user_num
+      p count
+      puts "Here is the computer's move:"
+      p computer_turn = count % 4
+        if computer_turn == 0
+          computer_turn = rand(1..3)
+        end
+      p computer_turn
+      count = count - computer_turn
+      p count
+    end
   end until count <= 0
+
 end
 
 p stick_game
