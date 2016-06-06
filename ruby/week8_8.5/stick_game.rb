@@ -41,14 +41,21 @@ count = 21
       puts "Please enter a valid number."
     else
       count = count - user_num
+      if count == 0
+        puts "You win!"
+        break
+      end
       p count
       puts "Here is the computer's move:"
-      p computer_turn = count % 4
+      computer_turn = count % 4
         if computer_turn == 0
           computer_turn = rand(1..3)
         end
       p computer_turn
       count = count - computer_turn
+      if count == 0
+        puts "You lose!"
+      end
       p count
     end
   end until count <= 0
