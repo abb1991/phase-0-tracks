@@ -4,7 +4,7 @@
 
 # # The game:
 
-#   - each round either the computer (with a randomly assigned name) or the user will be randomly choosen to start first. The game begins with the number 21 (imagine 21 pencils on a table). The player may chose to remove 1,2, or 3 from the total, e.g. the first player choses 3, and 18 remain. It is then the next player's turn to remove 1,2, or 3. The object of the game is to be the person to reach 0.
+#   - each round either the computer (with a randomly assigned name) or the user will be randomly choosen to start first. The game begins with the number 21 (imagine 21 pencils on a table). The player may chose to remove 1, 2, or 3 from the total, e.g. the first player choses 3, and 18 remain. It is then the next player's turn to remove 1, 2, or 3. The object of the game is to be the person to reach 0.
 
 # # Pseudocode
 
@@ -22,14 +22,31 @@
 
 # require gems
 
-# require 'sqlite3'
+require 'sqlite3'
 require 'faker'
+
+# create SQLite3 database
+
+stick_game_db = SQLite3::Database.new("stick_game.db")
+
+create_table_cmd = <<-SQL
+  CREATE TABLE IF NOT EXISTS win_loss(
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(255),
+    win_loss BOOLEAN
+  )
+SQL
+
+stick_game_db.execute(create_table_cmd)
 
 # game logic
 
-def stick_game
+def stick_game(stick_game_db)
 
+rand_name = Faker::Name.name
 count = 21
+
+puts "Hi, I'm #{rand_name}. Let's play a simple game.\n We'll take turns subtracting 1,2, or 3 from 21.\n Whoever reaches zero first wins! \n\n"
 
   begin
     puts "How many would you like to take away? (1,2,3)"
@@ -42,30 +59,71 @@ count = 21
     else
       count = count - user_num
       if count == 0
-        puts "You win!"
+        game_results = true
         break
       end
-      p count
-      puts "Here is the computer's move:"
+      puts "remain: #{count}"
       computer_turn = count % 4
         if computer_turn == 0
           computer_turn = rand(1..3)
         end
-      p computer_turn
+      puts "#{rand_name}:#{computer_turn}"
       count = count - computer_turn
       if count == 0
-        puts "You lose!"
+        game_results = false
       end
-      p count
+      puts "remain: #{count}"
     end
   end until count <= 0
 
+  if game_results == true
+    puts "You win!"
+  else
+    puts "You lose."
+  end
+
+  # insert win_loss into table
+  stick_game_db.execute("INSERT INTO win_loss (name, win_loss) VALUES ('#{rand_name}', '#{game_results}')")
+
 end
 
-p stick_game
+
+
+# p stick_game(stick_game_db)
 
 
 # user interface
+
+puts "Welcome! Do you want to 'play' or check your past 'record'? (exit)"
+
+user_choice = gets.chomp.downcase
+
+
+  if user_choice == "play"
+    stick_game(stick_game_db)
+  elsif user_choice == "record"
+    results = stick_game_db.execute("SELECT * FROM win_loss;")
+    p results
+
+    results.each do |arr|
+
+      if arr[2] == true
+        result = "win"
+      else
+        result = "loss"
+      end
+
+      puts "game: #{arr[0]}"
+      puts "opponent: #{arr[1]}"
+      puts "result: #{result} \n\n"
+    end
+  elsif user_choice == "exit"
+    puts "goodbye!"
+  else
+    puts "Choose: play, record, exit"
+    user_choice == gets.chomp.downcase
+  end
+
 
 
 
