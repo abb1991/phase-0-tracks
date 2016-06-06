@@ -87,27 +87,19 @@ puts "Hi, I'm #{rand_name}. Let's play a simple game.\n We'll take turns subtrac
 
 end
 
-
-
-# p stick_game(stick_game_db)
-
-
 # user interface
-
-puts "Welcome! Do you want to 'play' or check your past 'record'? (exit)"
-
-user_choice = gets.chomp.downcase
-
+begin
+  puts "Do you want to 'play' or check your past 'record'? (exit)"
+  user_choice = gets.chomp.downcase
 
   if user_choice == "play"
     stick_game(stick_game_db)
   elsif user_choice == "record"
     results = stick_game_db.execute("SELECT * FROM win_loss;")
-    p results
 
     results.each do |arr|
 
-      if arr[2] == true
+      if arr[2] == "true"
         result = "win"
       else
         result = "loss"
@@ -115,15 +107,14 @@ user_choice = gets.chomp.downcase
 
       puts "game: #{arr[0]}"
       puts "opponent: #{arr[1]}"
-      puts "result: #{result} \n\n"
+      puts "result: #{result}"
+      puts "------------------- \n\n"
     end
-  elsif user_choice == "exit"
+  else user_choice == "exit"
     puts "goodbye!"
-  else
-    puts "Choose: play, record, exit"
-    user_choice == gets.chomp.downcase
+    break
   end
-
+end while 2 > 1
 
 
 
